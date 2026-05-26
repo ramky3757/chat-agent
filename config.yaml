@@ -1,0 +1,25 @@
+# ─────────────────────────────────────────────
+# MySQL connection settings
+# ─────────────────────────────────────────────
+database:
+  db_type: mysql     # mysql | postgres
+  host: zoomin-dev.cbhtmqmcjkgq.ap-south-1.rds.amazonaws.com
+  port: 3306
+  username: readonly_user
+  password: agent_zoomin
+  database: zoomin_stage
+  max_rows: 200      # hard cap on rows returned per query
+
+# ─────────────────────────────────────────────
+# Claude model settings
+# ─────────────────────────────────────────────
+claude:
+  model: claude-sonnet-4-6
+  max_tokens: 1024
+  skills_file: skills.md   # path to domain knowledge file (optional)
+
+# ─────────────────────────────────────────────
+# Session / conversation history
+# ─────────────────────────────────────────────
+session:
+  max_history_messages: 10   # total messages kept in context (user + assistant)
